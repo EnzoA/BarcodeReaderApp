@@ -16,5 +16,10 @@ namespace BarcodeReaderApp.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+        void ScannerViewOnScanResult(ZXing.Result result)
+        {
+            DisplayAlert(title: "Scan result", message: result.Text, cancel: "Ok");
+        }
+    }
 }

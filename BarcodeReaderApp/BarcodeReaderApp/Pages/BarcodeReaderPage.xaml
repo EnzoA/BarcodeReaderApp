@@ -3,13 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              x:Class="BarcodeReaderApp.Pages.BarcodeReaderPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
+    <AbsoluteLayout>
+        <zxing:ZXingScannerView x:Name="scannerView"
+                                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                AbsoluteLayout.LayoutFlags="All"
+                                IsScanning="True"
+                                OnScanResult="ScannerViewOnScanResult" />
 
-            <zxing:ZXingScannerView IsScanning="True" WidthRequest="200" HeightRequest="200" />
-        </StackLayout>
-    </ContentPage.Content>
+        <zxing:ZXingDefaultOverlay AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                   AbsoluteLayout.LayoutFlags="All"
+                                   BottomText="Ajusta en la parte central el código del producto"
+                                   ShowFlashButton="False"
+                                   Opacity="0.9" />
+    </AbsoluteLayout>
 </ContentPage>
