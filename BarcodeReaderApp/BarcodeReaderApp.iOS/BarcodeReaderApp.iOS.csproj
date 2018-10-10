@@ -151,11 +151,14 @@
     <PackageReference Include="ZXing.Net.Mobile.Forms">
       <Version>2.4.1</Version>
     </PackageReference>
+    <PackageReference Include="Prism.Unity.Forms">
+      <Version>7.0.0.396</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\BarcodeReaderApp\BarcodeReaderApp.csproj">
-      <Project>{138CDD66-8E42-4F84-8597-2E315226086C}</Project>
+      <Project>{BC057BC7-62CC-4AB1-80DE-5308687EEAA6}</Project>
       <Name>BarcodeReaderApp</Name>
     </ProjectReference>
   </ItemGroup>

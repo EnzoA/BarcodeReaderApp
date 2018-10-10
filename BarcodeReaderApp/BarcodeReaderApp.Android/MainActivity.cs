@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Prism;
+using Prism.Ioc;
 
 namespace BarcodeReaderApp.Droid
 {
