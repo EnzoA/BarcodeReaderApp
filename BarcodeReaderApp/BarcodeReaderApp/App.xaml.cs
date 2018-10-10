@@ -1,4 +1,5 @@
 using System;
+using BarcodeReaderApp.Configuration;
 using BarcodeReaderApp.Pages;
 using BarcodeReaderApp.ViewModels;
 using Prism;
@@ -25,7 +26,8 @@ namespace BarcodeReaderApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("/NavigationPage/BarcodeReaderPage");
+            var mainPageRoute = new Uri($"/{NavigationConstants.NavigationPage}/{NavigationConstants.BarcodeReaderPage}", UriKind.Absolute);
+            NavigationService.NavigateAsync(mainPageRoute);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
