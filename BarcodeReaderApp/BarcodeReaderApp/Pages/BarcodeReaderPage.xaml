@@ -11,14 +11,13 @@
                                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                                 AbsoluteLayout.LayoutFlags="All"
                                 IsScanning="true"
-                                IsAnalyzing="true"
                                 ScanResultCommand="{Binding OnScanResultCommand}"
-                                Result="{Binding ScanResult}" />
+                                Result="{Binding ScanResult, Mode=TwoWay}" />
 
         <zxing:ZXingDefaultOverlay AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                                    AbsoluteLayout.LayoutFlags="All"
                                    BottomText="Ajusta en la parte central el código del producto"
-                                   ShowFlashButton="False"
+                                   ShowFlashButton="false"
                                    Opacity="0.9" />
     </AbsoluteLayout>
 </ContentPage>
