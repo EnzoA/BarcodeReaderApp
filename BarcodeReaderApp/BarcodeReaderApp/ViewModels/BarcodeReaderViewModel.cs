@@ -25,11 +25,6 @@ namespace BarcodeReaderApp.ViewModels
             get => _onScanResultCommand ?? (_onScanResultCommand = new DelegateCommand(OnScanResult));
         }
 
-        public BarcodeReaderViewModel()
-        {
-
-        }
-
         void OnScanResult()
         {
 
