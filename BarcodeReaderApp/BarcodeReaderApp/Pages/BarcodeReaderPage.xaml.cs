@@ -1,4 +1,5 @@
 ﻿using System;
+using BarcodeReaderApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,12 +8,14 @@ namespace BarcodeReaderApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BarcodeReaderPage : ContentPage
 	{
+        BarcodeReaderViewModel _viewModel;
+
 		public BarcodeReaderPage ()
 		{
             InitializeComponent();
             scannerOverlay.BindingContext = scannerOverlay;
-            TimeSpan ts = new TimeSpan(0, 0, 0, 3, 0);
-            Device.StartTimer(ts, () =>
+            var timeSpan = new TimeSpan(0, 0, 0, 3, 0);
+            Device.StartTimer(timeSpan, () =>
             {
                 if (scannerView.IsScanning)
                 {
@@ -22,20 +25,27 @@ namespace BarcodeReaderApp.Pages
             });
         }
 
-        void ScannerViewOnScanResult(ZXing.Result result)
+        protected override void OnBindingContextChanged()
         {
-            DisplayAlert(title: "Scan result", message: result.Text, cancel: "Ok");
+            base.OnBindingContextChanged();
+            _viewModel = BindingContext as BarcodeReaderViewModel;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            scannerView.IsScanning = true;
+            if (_viewModel != null)
+            {
+                _viewModel.IsScanning = true;
+            }
         }
 
         protected override void OnDisappearing()
         {
-            scannerView.IsScanning = false;
+            if (_viewModel != null)
+            {
+                _viewModel.IsScanning = false;
+            }
             base.OnDisappearing();
         }
     }
