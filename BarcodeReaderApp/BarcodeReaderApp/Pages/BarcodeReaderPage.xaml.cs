@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BarcodeReaderApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +14,7 @@ namespace BarcodeReaderApp.Pages
 		public BarcodeReaderPage ()
 		{
             InitializeComponent();
+            scannerView.Options.PossibleFormats = new List<ZXing.BarcodeFormat> { ZXing.BarcodeFormat.EAN_8 };
             scannerOverlay.BindingContext = scannerOverlay;
             var timeSpan = new TimeSpan(0, 0, 0, 3, 0);
             Device.StartTimer(timeSpan, () =>

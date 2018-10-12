@@ -1,6 +1,7 @@
 using System;
 using BarcodeReaderApp.Configuration;
 using BarcodeReaderApp.Pages;
+using BarcodeReaderApp.Services;
 using BarcodeReaderApp.ViewModels;
 using Prism;
 using Prism.Ioc;
@@ -34,6 +35,7 @@ namespace BarcodeReaderApp
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<BarcodeReaderPage, BarcodeReaderViewModel>();
+            containerRegistry.RegisterSingleton<IProductService, DummyProductService>();
         }
     }
 }
