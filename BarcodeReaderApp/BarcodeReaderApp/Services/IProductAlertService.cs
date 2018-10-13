@@ -1,9 +1,10 @@
 ﻿using BarcodeReaderApp.Models;
+using System.Threading.Tasks;
 
 namespace BarcodeReaderApp.Services
 {
     public interface IAlertService
     {
-        void ShowProductAlert(Product product);
+        Task ShowProductAlertAsync(Product product);
     }
 }

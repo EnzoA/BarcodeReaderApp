@@ -15,7 +15,8 @@
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Label x:Name="titleLabel" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                        HorizontalOptions="FillAndExpand" FontSize="Large" Margin="0, 0, 0, 5" />
-                <Label x:Name="descriptionLabel" HeightRequest="20" HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 5" />
+                <Label x:Name="descriptionLabel" HeightRequest="20" HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 2" />
+                <Label x:Name="priceLabel" HeightRequest="20" HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 5" />
                 <Button x:Name="okButton" Text="Ok" VerticalOptions="End" HorizontalOptions="Center" Margin="0, 5, 0, 5" />
             </StackLayout>
         </Frame>

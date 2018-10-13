@@ -47,7 +47,7 @@ namespace BarcodeReaderApp.ViewModels
                 var product = await _productService.GetProductAsync(scannedProductId);
                 if (product != null)
                 {
-                    _alertService.ShowProductAlert(product);
+                    await _alertService.ShowProductAlertAsync(product);
                 }
             }
             catch (Exception)
