@@ -49,10 +49,14 @@ namespace BarcodeReaderApp.ViewModels
                 {
                     await _alertService.ShowProductAlertAsync(product);
                 }
+                else
+                {
+                    _alertService.ShowToastMessage("Código desconocido");
+                }
             }
             catch (Exception)
             {
-
+                _alertService.ShowToastMessage("Ups... se produjo un error");
             }
             finally
             {

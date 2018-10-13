@@ -6,5 +6,7 @@ namespace BarcodeReaderApp.Services
     public interface IAlertService
     {
         Task ShowProductAlertAsync(Product product);
+
+        void ShowToastMessage(string message);
     }
 }

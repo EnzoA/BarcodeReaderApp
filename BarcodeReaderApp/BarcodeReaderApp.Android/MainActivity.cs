@@ -18,6 +18,7 @@ namespace BarcodeReaderApp.Droid
 
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Rg.Plugins.Popup.Popup.Init(this, bundle);
+            Acr.UserDialogs.UserDialogs.Init(this);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
