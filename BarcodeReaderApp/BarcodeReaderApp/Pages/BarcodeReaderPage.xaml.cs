@@ -31,6 +31,13 @@ namespace BarcodeReaderApp.Pages
         {
             base.OnBindingContextChanged();
             _viewModel = BindingContext as BarcodeReaderViewModel;
+            if (_viewModel != null)
+            {
+                _viewModel.OnFlashToggled += () =>
+                {
+                    flashSwitchItem.Icon = _viewModel.IsTorchOn ? "flash_on.png" : "flash_off.png";
+                };
+            }
         }
 
         protected override void OnAppearing()

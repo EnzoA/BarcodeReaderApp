@@ -168,4 +168,13 @@
       <Name>BarcodeReaderApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flash_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flash_off.png" />
+  </ItemGroup>
 </Project>

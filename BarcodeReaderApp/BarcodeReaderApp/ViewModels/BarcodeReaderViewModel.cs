@@ -11,6 +11,8 @@ namespace BarcodeReaderApp.ViewModels
         IProductService _productService;
         IAlertService _alertService;
 
+        public event Action OnFlashToggled;
+
         ZXing.Result _scanResult;
         public ZXing.Result ScanResult
         {
@@ -25,10 +27,27 @@ namespace BarcodeReaderApp.ViewModels
             set => SetProperty(ref _isScanning, value);
         }
 
+        bool _isTorchOn;
+        public bool IsTorchOn
+        {
+            get => _isTorchOn;
+            set => SetProperty(ref _isTorchOn, value);
+        }
+
         DelegateCommand _onScanResultCommand;
         public DelegateCommand OnScanResultCommand
         {
             get => _onScanResultCommand ?? (_onScanResultCommand = new DelegateCommand(async () => await OnScanResult()));
+        }
+
+        DelegateCommand _toggleCameraFlashCommand;
+        public DelegateCommand ToggleCameraFlashCommand
+        {
+            get => _toggleCameraFlashCommand ?? (_toggleCameraFlashCommand = new DelegateCommand(() =>
+            {
+                IsTorchOn = !IsTorchOn;
+                OnFlashToggled?.Invoke();
+            }));
         }
 
         public BarcodeReaderViewModel(IProductService productService, IAlertService alertService)
