@@ -26,7 +26,7 @@ namespace BarcodeReaderApp.Pages
                 return true;
             });
         }
-
+        
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RgPopUp:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:RgPopUp="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                   xmlns:RgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                   CloseWhenBackgroundIsClicked="false"
+                   x:Class="BarcodeReaderApp.Pages.ProductAlertPage">
+    <RgPopUp:PopupPage.Animation>
+        <RgAnimations:ScaleAnimation PositionIn="Center" PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8"
+                                     DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn"
+                                     HasBackgroundAnimation="True" />
+    </RgPopUp:PopupPage.Animation>
+    <RgPopUp:PopupPage.Content>
+        <StackLayout Spacing="5" BackgroundColor="White" Margin="30, 0, 30, 0" VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="A title" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                   HorizontalOptions="FillAndExpand" FontSize="Large" Margin="0, 0, 0, 5" />
+        </StackLayout>
+    </RgPopUp:PopupPage.Content>
+</RgPopUp:PopupPage>

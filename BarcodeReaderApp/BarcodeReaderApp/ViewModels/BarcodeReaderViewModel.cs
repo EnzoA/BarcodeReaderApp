@@ -9,6 +9,7 @@ namespace BarcodeReaderApp.ViewModels
     public class BarcodeReaderViewModel : BindableBase
     {
         IProductService _productService;
+        IAlertService _alertService;
 
         ZXing.Result _scanResult;
         public ZXing.Result ScanResult
@@ -30,9 +31,10 @@ namespace BarcodeReaderApp.ViewModels
             get => _onScanResultCommand ?? (_onScanResultCommand = new DelegateCommand(async () => await OnScanResult()));
         }
 
-        public BarcodeReaderViewModel(IProductService productService)
+        public BarcodeReaderViewModel(IProductService productService, IAlertService alertService)
         {
             _productService = productService;
+            _alertService = alertService;
         }
 
         async Task OnScanResult()
@@ -43,6 +45,7 @@ namespace BarcodeReaderApp.ViewModels
             {
                 var scannedProductId = Convert.ToInt64(ScanResult.Text);
                 var product = await _productService.GetProductAsync(scannedProductId);
+                _alertService.ShowProductAlert(product);
             }
             catch (Exception)
             {

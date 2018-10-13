@@ -27,6 +27,7 @@ namespace BarcodeReaderApp.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+            Rg.Plugins.Popup.Popup.Init();
 
             return base.FinishedLaunching(app, options);
         }

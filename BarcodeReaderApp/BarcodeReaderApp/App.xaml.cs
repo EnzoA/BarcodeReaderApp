@@ -14,11 +14,6 @@ namespace BarcodeReaderApp
 {
 	public partial class App : PrismApplication
 	{
-        public App() : base(null)
-        {
-
-        }
-
         public App (IPlatformInitializer platformInitializer = null) : base(platformInitializer) 
 		{
 
@@ -36,6 +31,7 @@ namespace BarcodeReaderApp
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<BarcodeReaderPage, BarcodeReaderViewModel>();
             containerRegistry.RegisterSingleton<IProductService, DummyProductService>();
+            containerRegistry.RegisterSingleton<IAlertService, AlertService>();
         }
     }
 }

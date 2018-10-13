@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.168" />
     <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.0.0.396" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.1.47" />
@@ -14,11 +15,13 @@
     <EmbeddedResource Update="Pages\BarcodeReaderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ProductAlertPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Configuration\" />
     <Folder Include="Models\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 </Project>
