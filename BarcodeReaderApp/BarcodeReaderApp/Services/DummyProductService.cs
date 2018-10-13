@@ -35,7 +35,7 @@ namespace BarcodeReaderApp.Services
             },
             new Product
             {
-                Id = 4,
+                Id = 1234565,
                 Name = "Monitor Samsung 22",
                 Description = "Ultra Slim Full HD 1080",
                 Price = 6999,

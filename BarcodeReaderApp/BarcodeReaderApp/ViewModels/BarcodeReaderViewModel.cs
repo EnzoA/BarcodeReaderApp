@@ -45,7 +45,10 @@ namespace BarcodeReaderApp.ViewModels
             {
                 var scannedProductId = Convert.ToInt64(ScanResult.Text);
                 var product = await _productService.GetProductAsync(scannedProductId);
-                _alertService.ShowProductAlert(product);
+                if (product != null)
+                {
+                    _alertService.ShowProductAlert(product);
+                }
             }
             catch (Exception)
             {

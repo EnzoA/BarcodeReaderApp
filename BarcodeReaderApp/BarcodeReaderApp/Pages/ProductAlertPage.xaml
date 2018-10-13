@@ -11,9 +11,13 @@
                                      HasBackgroundAnimation="True" />
     </RgPopUp:PopupPage.Animation>
     <RgPopUp:PopupPage.Content>
-        <StackLayout Spacing="5" BackgroundColor="White" Margin="30, 0, 30, 0" VerticalOptions="CenterAndExpand" Padding="20">
-            <Label Text="A title" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
-                   HorizontalOptions="FillAndExpand" FontSize="Large" Margin="0, 0, 0, 5" />
-        </StackLayout>
+        <Frame BackgroundColor="White" Margin="30, 0, 30, 0" VerticalOptions="CenterAndExpand" Padding="20" CornerRadius="15">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Label x:Name="titleLabel" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                       HorizontalOptions="FillAndExpand" FontSize="Large" Margin="0, 0, 0, 5" />
+                <Label x:Name="descriptionLabel" HeightRequest="20" HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 5" />
+                <Button x:Name="okButton" Text="Ok" VerticalOptions="End" HorizontalOptions="Center" Margin="0, 5, 0, 5" />
+            </StackLayout>
+        </Frame>
     </RgPopUp:PopupPage.Content>
 </RgPopUp:PopupPage>

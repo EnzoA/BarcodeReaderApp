@@ -10,9 +10,10 @@ namespace BarcodeReaderApp.Services
         public void ShowProductAlert(Product product)
         {
             var navigationPage = App.Current.MainPage as NavigationPage;
-            if (navigationPage != null)
+            Page currentPage = navigationPage?.CurrentPage;
+            if (currentPage != null)
             {
-                Device.BeginInvokeOnMainThread(async () => await navigationPage.CurrentPage.Navigation.PushPopupAsync(new ProductAlertPage(product)));
+                Device.BeginInvokeOnMainThread(async () => await currentPage.Navigation.PushPopupAsync(new ProductAlertPage(product, currentPage)));
             }
         }
     }
