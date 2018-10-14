@@ -7,7 +7,7 @@
              x:Class="BarcodeReaderApp.Pages.BarcodeReaderPage"
              Title="Scanner">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="flashSwitchItem" Icon="flash_off.png" Command="{Binding ToggleCameraFlashCommand}" />
+        <ToolbarItem x:Name="flashSwitchItem" Icon="light_off.png" Command="{Binding ToggleCameraFlashCommand}" />
     </ContentPage.ToolbarItems>
     <AbsoluteLayout>
         <zxing:ZXingScannerView x:Name="scannerView"

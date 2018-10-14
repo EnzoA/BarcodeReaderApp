@@ -15,7 +15,8 @@ namespace BarcodeReaderApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#425156"));
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Rg.Plugins.Popup.Popup.Init(this, bundle);
             Acr.UserDialogs.UserDialogs.Init(this);

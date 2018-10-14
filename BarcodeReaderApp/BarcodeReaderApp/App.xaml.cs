@@ -22,13 +22,13 @@ namespace BarcodeReaderApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            var mainPageRoute = new Uri($"/{NavigationConstants.NavigationPage}/{NavigationConstants.BarcodeReaderPage}", UriKind.Absolute);
+            var mainPageRoute = new Uri($"/{NavigationConstants.CustomNavigationPage}/{NavigationConstants.BarcodeReaderPage}", UriKind.Absolute);
             NavigationService.NavigateAsync(mainPageRoute);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<CustomNavigationPage>();
             containerRegistry.RegisterForNavigation<BarcodeReaderPage, BarcodeReaderViewModel>();
             containerRegistry.RegisterSingleton<IProductService, DummyProductService>();
             containerRegistry.RegisterSingleton<IAlertService, AlertService>();
