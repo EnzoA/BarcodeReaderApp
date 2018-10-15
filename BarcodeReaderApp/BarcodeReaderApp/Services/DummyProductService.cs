@@ -59,11 +59,11 @@ namespace BarcodeReaderApp.Services
             },
             new Product
             {
-                Id = 1234565,
-                Name = "Google Chromecast 2",
-                Description = "Reproduce contenido multimeadia en streaming desde un dispositivo móvil",
-                Price = 2700,
-                CurrencySymbol = "$"
+                Id = 7,
+                Name = "Amazon Kindle Touch 8",
+                Description = "Amazing new generation of the top e-reader in the world",
+                Price = 220,
+                CurrencySymbol = "USD"
             },
             new Product
             {

@@ -9,6 +9,7 @@
         <ResourceDictionary>
             <Style x:Key="labelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="#736e92" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
             </Style>
         </ResourceDictionary>
     </RgPopUp:PopupPage.Resources>
@@ -23,8 +24,8 @@
                 <Label x:Name="titleLabel" Style="{StaticResource labelStyle}" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                        HorizontalOptions="FillAndExpand" FontSize="Large" Margin="0, 0, 0, 5" />
                 
-                <Label x:Name="descriptionLabel" Style="{StaticResource labelStyle}" HeightRequest="20" HorizontalTextAlignment="Center"
-                       FontSize="Medium" Margin="0, 0, 0, 2" />
+                <Label x:Name="descriptionLabel" Style="{StaticResource labelStyle}" HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 2" />
                 
                 <Label x:Name="priceLabel" Style="{StaticResource labelStyle}" HeightRequest="20" HorizontalTextAlignment="Center"
                        FontSize="Medium" Margin="0, 0, 0, 35" />
