@@ -35,7 +35,10 @@ namespace BarcodeReaderApp.Pages
             {
                 _viewModel.OnFlashToggled += () =>
                 {
-                    flashSwitchItem.Icon = _viewModel.IsTorchOn ? "light_on.png" : "light_off.png";
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        flashSwitchItem.Icon = _viewModel.IsTorchOn ? "light_on.png" : "light_off.png";
+                    });
                 };
             }
         }

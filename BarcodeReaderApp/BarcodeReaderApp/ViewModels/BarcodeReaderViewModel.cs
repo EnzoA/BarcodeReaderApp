@@ -31,7 +31,13 @@ namespace BarcodeReaderApp.ViewModels
         public bool IsTorchOn
         {
             get => _isTorchOn;
-            set => SetProperty(ref _isTorchOn, value);
+            set
+            {
+                if (SetProperty(ref _isTorchOn, value))
+                {
+                    OnFlashToggled?.Invoke();
+                }
+            }
         }
 
         DelegateCommand _onScanResultCommand;
@@ -43,11 +49,7 @@ namespace BarcodeReaderApp.ViewModels
         DelegateCommand _toggleCameraFlashCommand;
         public DelegateCommand ToggleCameraFlashCommand
         {
-            get => _toggleCameraFlashCommand ?? (_toggleCameraFlashCommand = new DelegateCommand(() =>
-            {
-                IsTorchOn = !IsTorchOn;
-                OnFlashToggled?.Invoke();
-            }));
+            get => _toggleCameraFlashCommand ?? (_toggleCameraFlashCommand = new DelegateCommand(() => IsTorchOn = !IsTorchOn));
         }
 
         public BarcodeReaderViewModel(IProductService productService, IAlertService alertService)
@@ -58,7 +60,7 @@ namespace BarcodeReaderApp.ViewModels
 
         async Task OnScanResult()
         {
-            IsScanning = false;
+            IsScanning = IsTorchOn = false;
 
             try
             {

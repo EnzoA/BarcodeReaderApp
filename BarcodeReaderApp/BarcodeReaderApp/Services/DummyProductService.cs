@@ -35,7 +35,7 @@ namespace BarcodeReaderApp.Services
             },
             new Product
             {
-                Id = 1234565,
+                Id = 4,
                 Name = "Monitor Samsung 22",
                 Description = "Ultra Slim Full HD 1080",
                 Price = 6999,
@@ -59,7 +59,7 @@ namespace BarcodeReaderApp.Services
             },
             new Product
             {
-                Id = 7,
+                Id = 1234565,
                 Name = "Google Chromecast 2",
                 Description = "Reproduce contenido multimeadia en streaming desde un dispositivo móvil",
                 Price = 2700,

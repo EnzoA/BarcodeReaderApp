@@ -5,6 +5,13 @@
                    xmlns:RgAnimations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
                    CloseWhenBackgroundIsClicked="false"
                    x:Class="BarcodeReaderApp.Pages.ProductAlertPage">
+    <RgPopUp:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#736e92" />
+            </Style>
+        </ResourceDictionary>
+    </RgPopUp:PopupPage.Resources>
     <RgPopUp:PopupPage.Animation>
         <RgAnimations:ScaleAnimation PositionIn="Center" PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8"
                                      DurationIn="400" DurationOut="300" EasingIn="SinOut" EasingOut="SinIn"
@@ -13,11 +20,17 @@
     <RgPopUp:PopupPage.Content>
         <Frame BackgroundColor="White" Margin="30, 0, 30, 0" VerticalOptions="CenterAndExpand" Padding="20" CornerRadius="15">
             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Label x:Name="titleLabel" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                <Label x:Name="titleLabel" Style="{StaticResource labelStyle}" HeightRequest="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                        HorizontalOptions="FillAndExpand" FontSize="Large" Margin="0, 0, 0, 5" />
-                <Label x:Name="descriptionLabel" HeightRequest="20" HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 2" />
-                <Label x:Name="priceLabel" HeightRequest="20" HorizontalTextAlignment="Center" FontSize="Medium" Margin="0, 0, 0, 5" />
-                <Button x:Name="okButton" Text="Ok" VerticalOptions="End" HorizontalOptions="Center" Margin="0, 5, 0, 5" />
+                
+                <Label x:Name="descriptionLabel" Style="{StaticResource labelStyle}" HeightRequest="20" HorizontalTextAlignment="Center"
+                       FontSize="Medium" Margin="0, 0, 0, 2" />
+                
+                <Label x:Name="priceLabel" Style="{StaticResource labelStyle}" HeightRequest="20" HorizontalTextAlignment="Center"
+                       FontSize="Medium" Margin="0, 0, 0, 35" />
+
+                <Button x:Name="okButton" Text="Aceptar" BackgroundColor="#257c3d" HeightRequest="40" WidthRequest="150" CornerRadius="8"
+                        TextColor="White" VerticalOptions="End" HorizontalOptions="Center" Margin="0, 5, 0, 5" />
             </StackLayout>
         </Frame>
     </RgPopUp:PopupPage.Content>
