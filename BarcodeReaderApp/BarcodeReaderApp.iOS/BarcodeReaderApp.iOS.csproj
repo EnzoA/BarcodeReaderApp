@@ -138,19 +138,19 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\warning.imageset\Contents.json">
+    <ImageAsset Include="Assets.xcassets\light_off.imageset\icons8-light-off-filled-100.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\light_off.imageset\icons8-light-off-100.png">
+    <ImageAsset Include="Assets.xcassets\light_on.imageset\icons8-light-on-filled-100.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\warning.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\light_on.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\light_off.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\light_on.imageset\icons8-light-on-100.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\warning.imageset\icons8-alta-prioridad-80.png">

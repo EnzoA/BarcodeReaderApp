@@ -44,10 +44,7 @@ namespace BarcodeReaderApp.Services
             toastConfig.MessageTextColor = Color.FromHex("DB3214");
             toastConfig.Position = ToastPosition.Top;
             toastConfig.Icon = "warning.png";
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                UserDialogs.Instance.Toast(toastConfig);
-            });
+            Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.Toast(toastConfig));
         }
     }
 }

@@ -11,7 +11,7 @@ namespace BarcodeReaderApp.ViewModels
         IProductService _productService;
         IAlertService _alertService;
 
-        public event Action OnFlashToggled;
+        public event Action<bool> OnFlashToggled;
 
         ZXing.Result _scanResult;
         public ZXing.Result ScanResult
@@ -35,7 +35,7 @@ namespace BarcodeReaderApp.ViewModels
             {
                 if (SetProperty(ref _isTorchOn, value))
                 {
-                    OnFlashToggled?.Invoke();
+                    OnFlashToggled?.Invoke(_isTorchOn);
                 }
             }
         }
@@ -77,7 +77,7 @@ namespace BarcodeReaderApp.ViewModels
             }
             catch (Exception)
             {
-                _alertService.ShowToastMessage("Ups... se produjo un error");
+                _alertService.ShowToastMessage("Formato no soportado");
             }
             finally
             {

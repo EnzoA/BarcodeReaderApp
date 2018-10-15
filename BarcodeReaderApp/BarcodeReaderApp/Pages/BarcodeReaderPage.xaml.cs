@@ -15,9 +15,8 @@ namespace BarcodeReaderApp.Pages
 		public BarcodeReaderPage ()
 		{
             InitializeComponent();
-            scannerView.Options.PossibleFormats = new List<BarcodeFormat> { BarcodeFormat.EAN_8, BarcodeFormat.EAN_13 };
             scannerOverlay.BindingContext = scannerOverlay;
-            var timeSpan = new TimeSpan(0, 0, 0, 3, 0);
+            var timeSpan = TimeSpan.FromSeconds(3);
             Device.StartTimer(timeSpan, () =>
             {
                 if (scannerView.IsScanning)
@@ -34,13 +33,7 @@ namespace BarcodeReaderApp.Pages
             _viewModel = BindingContext as BarcodeReaderViewModel;
             if (_viewModel != null)
             {
-                _viewModel.OnFlashToggled += () =>
-                {
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        flashSwitchItem.Icon = _viewModel.IsTorchOn ? "light_on.png" : "light_off.png";
-                    });
-                };
+                _viewModel.OnFlashToggled += ToggleFlashIcon;
             }
         }
 
@@ -60,6 +53,14 @@ namespace BarcodeReaderApp.Pages
                 _viewModel.IsScanning = false;
             }
             base.OnDisappearing();
+        }
+
+        void ToggleFlashIcon(bool isFlashOn)
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                flashSwitchItem.Icon = isFlashOn ? "light_on.png" : "light_off.png";
+            });
         }
     }
 }
